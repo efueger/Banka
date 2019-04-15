@@ -6,13 +6,13 @@
     "title": "Banka App"
   },
   "host": "bankaapp-api.herokuapp.com",
-  "basePath": "/api",
+  "basePath": "/",
   "schemes": [
     "http",
     "https"
   ],
   "paths": {
-    "/auth/signup": {
+    "/api/auth/signup": {
       "post": {
         "tags": [
           "Signup"
@@ -63,7 +63,7 @@
         }
       }
     },
-    "/auth/signin": {
+    "/api/auth/signin": {
       "post": {
         "tags": [
           "Signin"
@@ -100,7 +100,7 @@
         }
       }
     },
-    "/auth/addstaff": {
+    "/api/auth/addstaff": {
       "post": {
         "tags": [
           "Add Staff"
@@ -156,7 +156,7 @@
         ]
       }
     },
-    "/v1/accounts": {
+    "/api/v1/accounts": {
       "post": {
         "tags": [
           "Accounts"
@@ -191,7 +191,7 @@
         ]
       }
     },
-    "/v1/accounts/{accountNumber}": {
+    "/api/v1/accounts/{accountNumber}": {
       "patch": {
         "tags": [
           "Accounts"
@@ -233,7 +233,7 @@
         ]
       }
     },
-    "/v1/transactions/{accountNumber}/debit": {
+    "/api/v1/transactions/{accountNumber}/debit": {
       "post": {
         "tags": [
           "Transactions"
@@ -275,7 +275,7 @@
         ]
       }
     },
-    "/v1/transactions/{accountNumber}/credit": {
+    "/api/v1/transactions/{accountNumber}/credit": {
       "post": {
         "tags": [
           "Transactions"
@@ -317,7 +317,7 @@
         ]
       }
     },
-    "/v1/users": {
+    "/api/v1/users": {
       "get": {
         "tags": [
           "Users"
@@ -341,7 +341,7 @@
         ]
       }
     },
-    "/v1/users/{userId}": {
+    "/api/v1/users/{userId}": {
       "delete": {
         "tags": [
           "Users"
