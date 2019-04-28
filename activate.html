@@ -22,22 +22,31 @@
         </div>
         <div class="sidebar-menu">
           <ul class="sidebar-list">
-            <li class="sidebar-item">
+            <li class="sidebar-item user">
               <a href="./dashboard.html" class="sidebar-link">Dashboard</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./credit.html" class="sidebar-link">Credit / Debit</a>
+            <li class="sidebar-item user">
+              <a href="./createaccount.html" class="sidebar-link">Create an account</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./users.html" class="sidebar-link">Users Accounts</a>
+            <li class="sidebar-item staff admin">
+              <a href="./accounts.html" class="sidebar-link">Credit / Debit</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
+              <a href="./viewaccounts.html" class="sidebar-link">All Accounts</a>
+            </li>
+            <li class="sidebar-item user">
+              <a href="./transactions.html" class="sidebar-link">Transactions</a>
+            </li>
+            <li class="sidebar-item staff admin">
+              <a href="./users.html" class="sidebar-link">Users</a>
+            </li>
+            <li class="sidebar-item admin">
               <a href="staffs.html" class="sidebar-link">Staffs</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item admin">
               <a href="./adduser.html" class="sidebar-link">Create Staffs</a>
             </li>
-            <li class="sidebar-item sidebar-item-active">
+            <li class="sidebar-item staff admin sidebar-item-active">
               <a href="./activate.html" class="sidebar-link">Activate / Deactivate</a>
             </li>
           </ul>
@@ -57,7 +66,7 @@
             </svg>
           </button>
           <form class="search-form">
-            <input type="text" class="search-input" placeholder="Search...">
+            <input type="text" id="search" class="search-input" placeholder="Search...">
             <button class="search-form-button">
               <svg class="search-form-icon">
                 <use xlink:href="./svg/sprite.svg#icon-magnifying-glass"></use>
@@ -77,14 +86,6 @@
                   <li class="item">
                     <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing
                       elit. Quae, optio?</a>
-                  </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur
-                      adipisicing.</a>
-                  </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur adipisicing
-                      elit. Nobis similique soluta sit impedit, provident laborum?</a>
                   </li>
                 </ul>
               </div>
@@ -108,7 +109,7 @@
                         <use xlink:href="./svg/sprite.svg#icon-help-with-circle"></use>
                       </svg>Help</a>
                   </li>
-                  <li class="item"><a href="#" class="link">
+                  <li class="item"><a href="#" class="link" id="logout">
                       <svg class="user-nav-link-icon">
                         <use xlink:href="./svg/sprite.svg#icon-log-out"></use>
                       </svg>Logout</a>
@@ -121,60 +122,74 @@
 
         <!--Main Body-->
         <main class="main-body">
+          <p class="errorMessage"></p>
+          <p class="successMessage"></p>
+          <!--Accounts Limit-->
+          <div class="accountsQuery">
+            <div class="queryForm">
+              <div class="card">
+                <form action="" class="accounts-form">
+                  <div class="form-group">
+                    <select class="accounts-select" id="limit">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                    </select>
+                  </div>
+
+                  <input type="submit" id="go" class="btn-go" value="Go">
+                </form>
+              </div>
+            </div>
+          </div>
           <div class="card">
-            <h1 class="content-title">Activate / Deactivate Acoounts</h1>
+            <h1 class="content-title">Activate / Deactivate Accounts</h1>
             <div class="table">
               <div class="table-row">
-                <div class="account-index">Index</div>
-                <div class="account-name">Account Name</div>
-                <div class="account-status">Account Status</div>
-                <div class="activate">Activate</div>
-                <div class="deactivate">Deactivate</div>
-              </div>
-              <div class="table-row">
-                <div class="account-index">1</div>
-                <div class="account-name">Fred Matthew</div>
-                <div class="account-status">Active</div>
-                <div class="activate"><a href="#" class="activate-btn">Activate</a></div>
-                <div class="deactivate"><a href="#" class="deactivate-btn">Deactivate</a></div>
-              </div>
-              <div class="table-row">
-                <div class="account-index">2</div>
-                <div class="account-name">Sandra Becker</div>
-                <div class="account-status">Deactive</div>
-                <div class="activate"><a href="#" class="activate-btn">Activate</a></div>
-                <div class="deactivate"><a href="#" class="deactivate-btn">Deactivate</a></div>
-              </div>
-              <div class="table-row">
-                <div class="account-index">3</div>
-                <div class="account-name">Linda Loran</div>
-                <div class="account-status">Active</div>
-                <div class="activate"><a href="#" class="activate-btn">Activate</a></div>
-                <div class="deactivate"><a href="#" class="deactivate-btn">Deactivate</a></div>
-              </div>
-              <div class="table-row">
-                <div class="account-index">4</div>
-                <div class="account-name">Micheal Muli</div>
-                <div class="account-status">Deactive</div>
-                <div class="activate"><a href="#" class="activate-btn">Activate</a></div>
-                <div class="deactivate"><a href="#" class="deactivate-btn">Deactivate</a></div>
-              </div>
-              <div class="table-row">
-                <div class="account-index">5</div>
-                <div class="account-name">Spiderman</div>
-                <div class="account-status">Active</div>
-                <div class="activate"><a href="#" class="activate-btn">Activate</a></div>
-                <div class="deactivate"><a href="#" class="deactivate-btn">Deactivate</a></div>
+                <div class="account-index">AC Number</div>
+                <div class="account-name">AC Name</div>
+                <div class="account-status">AC Status</div>
+                <div class="activate">Active/Dormant</div>
+                <div class="deactivate">Delete</div>
               </div>
             </div>
           </div>
         </main>
+      </div>
+
+      <!--Status Modal-->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="card">
+            <h1 class="content-title">Account Details</h1>
+            <p class="successMessage"></p>
+            <p class="errMessage"></p>
+            <!--Account Name and Balance-->
+            <h4 class="username">Account Name: <span id="username"></span></h4>
+            <h4 class="username">Account Number: <span id="acnumber"></span></h4>
+            <h4 class="balance">Status: <span id="balance"></span></h4>
+            <!--Status Form-->
+            <form action="" class="form">
+              <div class="form-group">
+                <label for="selectrole" class="form-label">Choose account status</label>
+                <select class="form-select">
+                  <option value="active">Active</option>
+                  <option value="dormant">Dormant</option>
+                </select>
+              </div>
+
+              <input type="submit" id="submit" class="btn btn-block btn-primary" value="Update">
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!--Js-->
   <script src="./js/app.js"></script>
+  <script src="./js/activate.js"></script>
 </body>
 
 </html>

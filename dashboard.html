@@ -22,22 +22,31 @@
         </div>
         <div class="sidebar-menu">
           <ul class="sidebar-list">
-            <li class="sidebar-item  sidebar-item-active">
+            <li class="sidebar-item user sidebar-item-active">
               <a href="./dashboard.html" class="sidebar-link">Dashboard</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./credit.html" class="sidebar-link">Credit / Debit</a>
+            <li class="sidebar-item user">
+              <a href="./createaccount.html" class="sidebar-link">Create an account</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./users.html" class="sidebar-link">Users Accounts</a>
+            <li class="sidebar-item staff admin">
+              <a href="./accounts.html" class="sidebar-link">Credit / Debit</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
+              <a href="./viewaccounts.html" class="sidebar-link">All Accounts</a>
+            </li>
+            <li class="sidebar-item user">
+              <a href="./transactions.html" class="sidebar-link">Transactions</a>
+            </li>
+            <li class="sidebar-item staff admin">
+              <a href="./users.html" class="sidebar-link">Users</a>
+            </li>
+            <li class="sidebar-item admin">
               <a href="staffs.html" class="sidebar-link">Staffs</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item admin">
               <a href="./adduser.html" class="sidebar-link">Create Staffs</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
               <a href="./activate.html" class="sidebar-link">Activate / Deactivate</a>
             </li>
           </ul>
@@ -77,13 +86,6 @@
                   <li class="item">
                     <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, optio?</a>
                   </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
-                  </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis similique
-                      soluta sit impedit, provident laborum?</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -106,7 +108,7 @@
                         <use xlink:href="./svg/sprite.svg#icon-help-with-circle"></use>
                       </svg>Help</a>
                   </li>
-                  <li class="item"><a href="#" class="link">
+                  <li class="item"><a href="#" class="link" id="logout">
                       <svg class="user-nav-link-icon">
                         <use xlink:href="./svg/sprite.svg#icon-log-out"></use>
                       </svg>Logout</a>
@@ -121,40 +123,59 @@
         <div class="welcome-user">
           <img class="welcome-user-photo" src="./img/js2.png" alt="">
           <div class="welcome-user-details">
-            <p class="welcome-username">Welcome back, Franklin!</p>
-            <p class="last-login">your last login was 05/05/2019</p>
+            <p class="welcome-username">Welcome back, <span id="firstname"></span></p>
+            <p class="last-login">your last login was <span id="lastLogin"></span></p>
           </div>
           <div class="welcome-user-balance">
             <p class="total-balance">Total Balance</p>
-            <p class="total-balance-amount">#102,000</p>
+            <p class="total-balance-amount"></p>
           </div>
         </div>
 
         <!--Main Body-->
         <main class="main-body">
+          <div class="alert alert-danger"><span class="errMsg">Error </span><span id="close">X</span></div>
+          <!--Accounts Dropdown-->
+          <div class="accounts">
+            <div class="card">
+              <form action="" class="accounts-form">
+                <div class="form-group">
+                  <select class="accounts-select" id="accounts">
+                    <!--dynamically create option-->
+                  </select>
+                </div>
+
+                <input type="submit" id="submit" class="btn-go" value="Go">
+              </form>
+            </div>
+          </div>
           <div class="dashboard-wrapper">
             <div class="user-details">
               <div class="card">
                 <h2 class="user-details-title">Account Details</h2>
                 <div class="div">
                   <h4 class="user-details-name">Account name: </h4>
-                  <span id="username">Franklin Ikenna</span>
+                  <span id="username"></span>
                 </div>
                 <div class="div">
                   <h4 class="user-details-number">Account Number: </h4>
-                  <span id="account-number">758973636739</span>
+                  <span id="account-number"></span>
+                </div>
+                <div class="div">
+                  <h4 class="user-details-balance">Account Balance: </h4>
+                  <span id="account-balance"></span>
                 </div>
                 <div class="div">
                   <h4 class="type">Type: </h4>
-                  <span id="type">Savings</span>
+                  <span id="type"></span>
                 </div>
                 <div class="div">
                   <h4 class="account-status">Account Status: </h4>
-                  <span id="account-status">Active</span>
+                  <span id="account-status"></span>
                 </div>
                 <div class="div">
                   <h4 class="user-details-created">Account Created: </h4>
-                  <span id="account-created">07/08/2017</span>
+                  <span id="account-created"></span>
                 </div>
               </div>
             </div>
@@ -184,6 +205,7 @@
 
   <!--Js-->
   <script src="./js/app.js"></script>
+  <script src="./js/dashboard.js"></script>
 </body>
 
 </html>

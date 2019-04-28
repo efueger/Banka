@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Credit/Debit - Banka Dashboard</title>
+  <title>Users - Banka Dashboard</title>
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -22,22 +22,31 @@
         </div>
         <div class="sidebar-menu">
           <ul class="sidebar-list">
-            <li class="sidebar-item">
+            <li class="sidebar-item user">
               <a href="./dashboard.html" class="sidebar-link">Dashboard</a>
             </li>
-            <li class="sidebar-item sidebar-item-active">
-              <a href="./credit.html" class="sidebar-link">Credit / Debit</a>
+            <li class="sidebar-item user">
+              <a href="./createaccount.html" class="sidebar-link">Create an account</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./users.html" class="sidebar-link">Users Accounts</a>
+            <li class="sidebar-item staff admin">
+              <a href="./accounts.html" class="sidebar-link">Credit / Debit</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
+              <a href="./viewaccounts.html" class="sidebar-link">All Accounts</a>
+            </li>
+            <li class="sidebar-item user sidebar-item-active">
+              <a href="./transactions.html" class="sidebar-link">Transactions</a>
+            </li>
+            <li class="sidebar-item staff admin">
+              <a href="./users.html" class="sidebar-link">Users</a>
+            </li>
+            <li class="sidebar-item admin">
               <a href="staffs.html" class="sidebar-link">Staffs</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item admin">
               <a href="./adduser.html" class="sidebar-link">Create Staffs</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
               <a href="./activate.html" class="sidebar-link">Activate / Deactivate</a>
             </li>
           </ul>
@@ -78,13 +87,6 @@
                     <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing
                       elit. Quae, optio?</a>
                   </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
-                  </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur adipisicing
-                      elit. Nobis similique soluta sit impedit, provident laborum?</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -107,7 +109,7 @@
                         <use xlink:href="./svg/sprite.svg#icon-help-with-circle"></use>
                       </svg>Help</a>
                   </li>
-                  <li class="item"><a href="#" class="link">
+                  <li class="item"><a href="#" class="link" id="logout">
                       <svg class="user-nav-link-icon">
                         <use xlink:href="./svg/sprite.svg#icon-log-out"></use>
                       </svg>Logout</a>
@@ -120,68 +122,55 @@
 
         <!--Main Body-->
         <main class="main-body">
-          <div class="card">
-            <h1 class="content-title">Credit / Debit Accounts</h1>
+          <div class="alert alert-success"><span class="successMsg">Success </span><span id="close">X</span></div>
+          <div class="alert alert-danger"><span class="errMsg">Something went wrong. Try again </span><span
+              id="close">X</span></div>
+          <!--Accounts Limit-->
+          <div class="accountsQuery">
+            <div class="queryForm">
+              <div class="card">
+                <form action="" class="accounts-form">
+                  <div class="form-group">
+                    <select class="accounts-select" id="account-select">
+                      <!--dynamically create option-->
+                    </select>
+                  </div>
+
+                  <input type="submit" id="ac-go" class="btn-go" value="Go">
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="tran-table card">
+            <h1 class="content-title">Users Accounts</h1>
 
             <div class="table">
               <div class="table-row">
-                <div class="account-index">Index</div>
+                <div class="account-index">Created On</div>
                 <div class="account-name">Account Name</div>
-                <div class="amount">Amount</div>
-                <div class="edit">Debit</div>
-                <div class="edit">Credit</div>
-              </div>
-              <div class="table-row">
-                <div class="account-index">1</div>
-                <div class="account-name">Fred Matthew</div>
-                <div class="amount">10000</div>
-                <div class="edit"><a href="#" class="delete-btn" id="show-modal">Debit</a></div>
-                <div class="edit"><a href="#" class="edit-btn" id="show-modal2">Credit</a></div>
+                <div class="account-number">Account Type</div>
+                <div class="record">Record</div>
+                <div class="delete">Balance</div>
               </div>
             </div>
           </div>
         </main>
-
       </div>
 
-      <!--Debit Modal-->
+      <!--Edit Modal-->
       <div id="modal" class="modal">
         <div class="modal-content">
           <div class="card">
-            <h1 class="content-title">Debit Account</h1>
+            <h1 class="tran-content-title">Banka App</h1>
+            <h3 class="tran-title">Transaction Details</h3>
             <!--Account Name and Balance-->
-            <h4 class="username">Account name: <span id="username"></span></h4>
-            <h4 class="balance">Balance: <span id="balance"></span></h4>
-            <!--Debit Form-->
-            <form action="" class="form">
-              <div class="form-group">
-                <label for="debit" class="form-label">Debit</label>
-                <input type="number" placeholder="Debit" id="debit" class="form-input">
-              </div>
-
-              <input type="submit" class="btn btn-block btn-primary" value="Debit">
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!--Credit Modal-->
-      <div id="modal2" class="modal2">
-        <div class="modal-content">
-          <div class="card">
-            <h1 class="content-title">Credit Account</h1>
-            <!--Account Name and Balance-->
-            <h4 class="username">Account name: <span id="username"></span></h4>
-            <h4 class="balance">Balance: <span id="balance"></span></h4>
-            <!--Credit Form-->
-            <form action="" class="form">
-              <div class="form-group">
-                <label for="credit" class="form-label">Credit</label>
-                <input type="number" placeholder="Credit" id="credit" class="form-input">
-              </div>
-
-              <input type="submit" class="btn btn-block btn-primary" value="Credit">
-            </form>
+            <p class="number">Account Number: &nbsp;&nbsp;&nbsp;<span id="account-number"></span></p>
+            <p class="balance">Amount: &nbsp;&nbsp;&nbsp;<span id="amount"></span></p>
+            <p class="balance">Old Balance: &nbsp;&nbsp;&nbsp;<span id="oldbalance"></span></p>
+            <p class="balance">New Balance: &nbsp;&nbsp;&nbsp;<span id="newbalance"></span></p>
+            <p class="balance">Transaction Type: &nbsp;&nbsp;&nbsp;<span id="transactiontype"></span></p>
+            <p class="balance">Cashier ID: &nbsp;&nbsp;&nbsp;<span id="cashierid"></span></p>
+            <p class="created">Transaction Date: &nbsp;&nbsp;&nbsp;<span id="trandate"></span></p>
           </div>
         </div>
       </div>
@@ -190,6 +179,7 @@
 
   <!--Js-->
   <script src="./js/app.js"></script>
+  <script src="./js/transactions.js"></script>
 </body>
 
 </html>

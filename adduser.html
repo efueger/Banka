@@ -22,22 +22,31 @@
         </div>
         <div class="sidebar-menu">
           <ul class="sidebar-list">
-            <li class="sidebar-item">
+            <li class="sidebar-item user">
               <a href="./dashboard.html" class="sidebar-link">Dashboard</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./credit.html" class="sidebar-link">Credit / Debit</a>
+            <li class="sidebar-item user">
+              <a href="./createaccount.html" class="sidebar-link">Create an account</a>
             </li>
-            <li class="sidebar-item">
-              <a href="./users.html" class="sidebar-link">Users Accounts</a>
+            <li class="sidebar-item staff admin">
+              <a href="./accounts.html" class="sidebar-link">Credit / Debit</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
+              <a href="./viewaccounts.html" class="sidebar-link">All Accounts</a>
+            </li>
+            <li class="sidebar-item user">
+              <a href="./transactions.html" class="sidebar-link">Transactions</a>
+            </li>
+            <li class="sidebar-item staff admin">
+              <a href="./users.html" class="sidebar-link">Users</a>
+            </li>
+            <li class="sidebar-item admin">
               <a href="staffs.html" class="sidebar-link">Staffs</a>
             </li>
-            <li class="sidebar-item sidebar-item-active">
+            <li class="sidebar-item admin sidebar-item-active">
               <a href="./adduser.html" class="sidebar-link">Create Staffs</a>
             </li>
-            <li class="sidebar-item">
+            <li class="sidebar-item staff admin">
               <a href="./activate.html" class="sidebar-link">Activate / Deactivate</a>
             </li>
           </ul>
@@ -78,13 +87,6 @@
                     <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing
                       elit. Quae, optio?</a>
                   </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
-                  </li>
-                  <li class="item">
-                    <a href="#" class="link">Lorem ipsum dolor sit amet consectetur adipisicing
-                      elit. Nobis similique soluta sit impedit, provident laborum?</a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -107,7 +109,7 @@
                         <use xlink:href="./svg/sprite.svg#icon-help-with-circle"></use>
                       </svg>Help</a>
                   </li>
-                  <li class="item"><a href="#" class="link">
+                  <li class="item"><a href="#" class="link" id="logout">
                       <svg class="user-nav-link-icon">
                         <use xlink:href="./svg/sprite.svg#icon-log-out"></use>
                       </svg>Logout</a>
@@ -120,19 +122,26 @@
 
         <!--Main Body-->
         <main class="main-body">
-          <div class="alert alert-success">Account created successfully <span id="close">X</span></div>
-          <div class="alert alert-danger">Something went wrong. Try again <span id="close">X</span></div>
+          <div class="alert alert-success"><span class="successMsg">Success </span><span id="close">X</span></div>
+          <div class="alert alert-danger"><span class="errMsg">Error </span><span id="close">X</span></div>
 
           <div class="card">
             <!--Add Staff Form-->
             <form action="" class="form">
               <div class="form-group">
-                <label for="fullname" class="form-label">Fullname</label>
-                <input type="text" placeholder="Fullname" id="fullname" class="form-input">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" placeholder="First Name" id="firstname" class="form-input">
+                <p class="errorfname"></p>
+              </div>
+              <div class="form-group">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" placeholder="Last Name" id="lastname" class="form-input">
+                <p class="errorlname"></p>
               </div>
               <div class="form-group">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" placeholder="Email Address" id="email" class="form-input">
+                <p class="erroremail"></p>
               </div>
               <div class="form-group">
                 <label for="selectrole" class="form-label">Choose user role</label>
@@ -144,9 +153,10 @@
               <div class="form-group">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" placeholder="Password" id="password" class="form-input">
+                <p class="errorpassword"></p>
               </div>
 
-              <input type="submit" class="btn btn-block btn-primary" value="Add User">
+              <input type="submit" id="submit" class="btn btn-block btn-primary" value="Add User">
             </form>
           </div>
         </main>
@@ -156,6 +166,7 @@
 
   <!--Js-->
   <script src="./js/app.js"></script>
+  <script src="./js/addstaff.js"></script>
 </body>
 
 </html>

@@ -16,10 +16,7 @@
         <div class="showcase-logo"><a href="./index.html">Banka</a></div>
         <ul class="showcase-list">
           <li class="showcase-item">
-            <a href="./login.html" class="showcase-link">Login</a>
-          </li>
-          <li class="showcase-item">
-            <a href="./register.html" class="showcase-link">Register</a>
+            <a href="./dashboard.html" class="showcase-link">Dashboard</a>
           </li>
         </ul>
       </header>
@@ -30,24 +27,17 @@
           </h1>
         </div>
         <div class="showcase-body-right">
+          <p class="msg"></p>
           <form action="" class="form">
             <div class="form-group">
-              <label for="accountfirstname" class="form-label">Account Firstname</label>
-              <input type="text" placeholder="Account Firstname" id="accountfirstname" class="form-input">
-            </div>
-            <div class="form-group">
-              <label for="accountlastname" class="form-label">Account Lastname</label>
-              <input type="text" placeholder="Account Lastname" id="accountlastname" class="form-input">
-            </div>
-            <div class="form-group">
               <label for="selectrole" class="form-label">Account Type</label>
-              <select class="form-select">
+              <select class="form-select" id="type">
                 <option value="current">Current</option>
                 <option value="savings">Savings</option>
               </select>
             </div>
 
-            <input type="submit" class="btn btn-block btn-primary" value="Create Account">
+            <input type="submit" id="submit" class="btn btn-block btn-primary" value="Create Account">
           </form>
         </div>
       </main>
@@ -56,6 +46,9 @@
       </footer>
     </div>
   </div>
+
+  <!--Javascript-->
+  <script src="./js/createaccount.js"></script>
 </body>
 
 </html>

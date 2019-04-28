@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Users - Banka Dashboard</title>
+  <title>Credit/Debit - Banka Dashboard</title>
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -28,7 +28,7 @@
             <li class="sidebar-item user">
               <a href="./createaccount.html" class="sidebar-link">Create an account</a>
             </li>
-            <li class="sidebar-item staff admin">
+            <li class="sidebar-item staff admin sidebar-item-active">
               <a href="./accounts.html" class="sidebar-link">Credit / Debit</a>
             </li>
             <li class="sidebar-item staff admin">
@@ -37,7 +37,7 @@
             <li class="sidebar-item user">
               <a href="./transactions.html" class="sidebar-link">Transactions</a>
             </li>
-            <li class="sidebar-item staff admin sidebar-item-active">
+            <li class="sidebar-item staff admin">
               <a href="./users.html" class="sidebar-link">Users</a>
             </li>
             <li class="sidebar-item admin">
@@ -125,46 +125,67 @@
           <div class="alert alert-success"><span class="successMsg">Success </span><span id="close">X</span></div>
           <div class="alert alert-danger"><span class="errMsg">Something went wrong. Try again </span><span
               id="close">X</span></div>
-          <!--Accounts Limit-->
-          <div class="accountsQuery">
-            <div class="queryForm">
+          <div class=" transaction">
+            <div class="transaction-body">
               <div class="card">
-                <form action="" class="accounts-form">
-                  <div class="form-group">
-                    <select class="accounts-select" id="limit">
-                      <option value="5">5</option>
-                      <option value="10">10</option>
-                      <option value="20">20</option>
-                      <option value="30">30</option>
-                    </select>
+                <div class="dc-tran">
+                  <h1>Credit And Debit</h1>
+                  <div class="form">
+                    <div class="form-group">
+                      <label for="accountnumber">Account Number</label><br>
+                      <input type="number" id="accountnumber">
+                    </div>
+                    <div class="form-group">
+                      <label for="amount">Amount</label><br>
+                      <input type="number" id="amount">
+                    </div>
+                    <div class="tran-btn">
+                      <input type="submit" class="credit-btn" id="credit" value="Credit">
+                      <input type="submit" class="debit-btn" id="debit" value="Debit">
+                    </div>
                   </div>
-
-                  <input type="submit" id="go" class="btn-go" value="Go">
-                </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card user-table">
-            <h1 class="content-title">Users Accounts</h1>
-
-            <div class="table">
-              <div class="table-row">
-                <div class="account-index">Name</div>
-                <div class="account-name">Email</div>
-                <div class="account-status">Type</div>
-                <div class="activate">IsAdmin</div>
-                <div class="deactivate">Delete</div>
+            <div class="transaction-details">
+              <p class="show-nothing">No account found</p>
+              <div class="show-account">
+                <div class="show">
+                  <h4 class="show-title">Account name: </h4>
+                  <span class="show-content" id="username">Fred Mark</span>
+                </div>
+                <div class="show">
+                  <h4 class="show-title">Account Number: </h4>
+                  <span class="show-content" id="account-number">45645666</span>
+                </div>
+                <div class="show">
+                  <h4 class="show-title">Account Balance: </h4>
+                  <span class="show-content" id="account-balance">4646</span>
+                </div>
+                <div class="show">
+                  <h4 class="show-title">Type: </h4>
+                  <span class="show-content" id="type">Savings</span>
+                </div>
+                <div class="show">
+                  <h4 class="show-title">Account Status: </h4>
+                  <span class="show-content" id="account-status">Draft</span>
+                </div>
+                <div class="show">
+                  <h4 class="show-title">Account Created: </h4>
+                  <span class="show-content" id="account-created">24/05/2019</span>
+                </div>
               </div>
             </div>
           </div>
         </main>
+
       </div>
     </div>
   </div>
 
   <!--Js-->
   <script src="./js/app.js"></script>
-  <script src="./js/users.js"></script>
+  <script src="./js/credit-debit.js"></script>
 </body>
 
 </html>

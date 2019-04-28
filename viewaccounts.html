@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Users - Banka Dashboard</title>
+  <title>Activate/Deactivate - Banka Dashboard</title>
   <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -31,13 +31,13 @@
             <li class="sidebar-item staff admin">
               <a href="./accounts.html" class="sidebar-link">Credit / Debit</a>
             </li>
-            <li class="sidebar-item staff admin">
+            <li class="sidebar-item staff admin sidebar-item-active">
               <a href="./viewaccounts.html" class="sidebar-link">All Accounts</a>
             </li>
             <li class="sidebar-item user">
               <a href="./transactions.html" class="sidebar-link">Transactions</a>
             </li>
-            <li class="sidebar-item staff admin sidebar-item-active">
+            <li class="sidebar-item staff admin">
               <a href="./users.html" class="sidebar-link">Users</a>
             </li>
             <li class="sidebar-item admin">
@@ -66,7 +66,7 @@
             </svg>
           </button>
           <form class="search-form">
-            <input type="text" class="search-input" placeholder="Search...">
+            <input type="text" id="search" class="search-input" placeholder="Search...">
             <button class="search-form-button">
               <svg class="search-form-icon">
                 <use xlink:href="./svg/sprite.svg#icon-magnifying-glass"></use>
@@ -145,14 +145,13 @@
             </div>
           </div>
           <div class="card user-table">
-            <h1 class="content-title">Users Accounts</h1>
-
+            <h1 class="content-title">Activate / Deactivate Accounts</h1>
             <div class="table">
               <div class="table-row">
-                <div class="account-index">Name</div>
-                <div class="account-name">Email</div>
-                <div class="account-status">Type</div>
-                <div class="activate">IsAdmin</div>
+                <div class="account-index">AC Number</div>
+                <div class="account-name">AC Name</div>
+                <div class="account-status">AC Status</div>
+                <div class="activate">Ac Type</div>
                 <div class="deactivate">Delete</div>
               </div>
             </div>
@@ -164,7 +163,7 @@
 
   <!--Js-->
   <script src="./js/app.js"></script>
-  <script src="./js/users.js"></script>
+  <script src="./js/allaccounts.js"></script>
 </body>
 
 </html>

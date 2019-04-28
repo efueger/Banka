@@ -32,23 +32,27 @@
         <div class="showcase-body-right">
           <form action="" class="form">
             <div class="form-group">
-              <label for="firstname" class="form-label">Firstname</label>
-              <input type="text" placeholder="Firstname" id="firstname" class="form-input">
+              <label for="firstname" class="form-label">First Name</label>
+              <input type="text" placeholder="First Name" id="firstname" class="form-input">
+              <p class="errorfname"></p>
             </div>
             <div class="form-group">
-              <label for="lastname" class="form-label">Lastname</label>
-              <input type="text" placeholder="Lastname" id="lastname" class="form-input">
+              <label for="lastname" class="form-label">Last Name</label>
+              <input type="text" placeholder="Last Name" id="lastname" class="form-input">
+              <p class="errorlname"></p>
             </div>
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
               <input type="text" placeholder="Email Address" id="email" class="form-input">
+              <p class="erroremail"></p>
             </div>
             <div class="form-group">
               <label for="password" class="form-label">Password</label>
               <input type="password" placeholder="Password" id="password" class="form-input">
+              <p class="errorpassword"></p>
             </div>
 
-            <input type="submit" class="btn btn-block btn-primary" value="Register">
+            <input type="submit" id="submit" class="btn btn-block btn-primary" value="Register">
           </form>
         </div>
       </main>
@@ -57,6 +61,17 @@
       </footer>
     </div>
   </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="card">
+        <h1 class="content-title">You are successfully signed up. You will be redirected in few seconds</h1>
+      </div>
+    </div>
+  </div>
+
+  <!--Javascript-->
+  <script src="./js/signup.js"></script>
 </body>
 
 </html>
