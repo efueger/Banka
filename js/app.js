@@ -118,14 +118,14 @@ const getUApi = (url) => {
       userFname.innerHTML = i.firstname;
       userFname.style.textTransform = 'capitalize';
       if (i.type === 'staff') {
-        if (location.pathname === '/Banka/dashboard.html') {
+        if (location.pathname === '/dashboard.html') {
           location.replace('./viewaccounts.html');
         }
         staffItems.forEach((staffItem) => {
           staffItem.style.display = 'block';
         });
       } else if (i.isadmin === true) {
-        if (location.pathname === '/Banka/dashboard.html') {
+        if (location.pathname === '/dashboard.html') {
           location.replace('./viewaccounts.html');
         }
         adminItems.forEach((adminItem) => {
