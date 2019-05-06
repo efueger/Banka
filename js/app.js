@@ -113,11 +113,11 @@ const getUApi = (url) => {
       }
     })
     .then((data1) => {
+      console.log(window.location.pathname);
       const i = data1.data;
       userFname.innerHTML = i.firstname;
       userFname.style.textTransform = 'capitalize';
       if (i.type === 'staff') {
-        console.log(window.location.pathname);
         if (window.location.pathname === '/Banka/dashboard.html') {
           location.replace('./viewaccounts.html');
         }
