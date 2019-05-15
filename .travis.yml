@@ -24,7 +24,6 @@ node_js:
   - "8.2.1"
 notifications: 
   email: true
-script: 
-  - "npm run test"
+
 services: 
   - postgresql
